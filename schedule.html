@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Расписание занятий (2026-2027)</title>
+    <style>
+        :root {
+            --primary: #4361ee;
+            --primary-light: #e0e7ff;
+            --accent: #3f37c9;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+            --tag-bg: #f1f5f9;
+            --room-bg: #e0f2fe;
+            --room-text: #0369a1;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            padding: 30px 20px;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 35px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px -5px rgba(67, 97, 238, 0.3);
+        }
+
+        header h1 {
+            font-size: 26px;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        header p {
+            font-size: 15px;
+            opacity: 0.9;
+        }
+
+        .day-section {
+            margin-bottom: 30px;
+            background: var(--card-bg);
+            border-radius: 16px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .day-header {
+            background: #f8fafc;
+            padding: 16px 24px;
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--primary);
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .lessons-list {
+            padding: 10px 20px;
+        }
+
+        .lesson-card {
+            display: flex;
+            align-items: stretch;
+            padding: 16px 0;
+            border-bottom: 1px solid var(--border-color);
+            gap: 20px;
+        }
+
+        .lesson-card:last-child {
+            border-bottom: none;
+        }
+
+        .lesson-time {
+            min-width: 95px;
+            font-weight: 600;
+            color: var(--text-muted);
+            font-size: 14px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-right: 2px solid var(--border-color);
+            padding-right: 15px;
+        }
+
+        .lesson-time .start {
+            color: var(--text-main);
+            font-size: 16px;
+        }
+
+        .lesson-info {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .lesson-title-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 6px;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .lesson-name {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .lesson-room {
+            background-color: var(--room-bg);
+            color: var(--room-text);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .lesson-details {
+            display: flex;
+            gap: 15px;
+            font-size: 13px;
+            color: var(--text-muted);
+            flex-wrap: wrap;
+        }
+
+        .lesson-type, .lesson-prof {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        @media (max-width: 600px) {
+            .lesson-card {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .lesson-time {
+                border-right: none;
+                border-bottom: 1px solid var(--border-color);
+                padding-right: 0;
+                padding-bottom: 8px;
+                flex-direction: row;
+                gap: 10px;
+                justify-content: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Расписание занятий</h1>
+        <p>2026–2027 учебный год • Период 1 • Неделя 1</p>
+    </header>
+
+    <!-- Понедельник -->
+    <div class="day-section">
+        <div class="day-header">📅 Понедельник</div>
+        <div class="lessons-list">
+            <div class="lesson-card">
+                <div class="lesson-time">
+                    <span class="start">8:00</span>
+                    <span>8:50</span>
+                </div>
+                <div class="lesson-info">
+                    <div class="lesson-title-row">
+                        <span class="lesson-name">History of Kazakhstan (State Exam)</span>
+                        <span class="lesson-room">C1.3.370L (Main Campus)</span>
+                    </div>
+                    <div class="lesson-details">
+                        <span class="lesson-type">📖 Лекция</span>
+                        <span class="lesson-prof">👨‍🏫 Джампеисова Ж.М.</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lesson-card">
+                <div class="lesson-time">
+                    <span class="start">9:00</span>
+                    <span>9:50</span>
+                </div>
+                <div class="lesson-info">
+                    <div class="lesson-title-row">
+                        <span class="lesson-name">History of Kazakhstan (State Exam)</span>
+                        <span class="lesson-room">C1.3.370L (Main Campus)</span>
+                    </div>
+                    <div class="lesson-details">
+                        <span class="lesson-type">📖 Лекция</span>
+                        <span class="lesson-prof">👨‍🏫 Джампеисова Ж.М.</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lesson-card">
+                <div class="lesson-time">
+                    <span class="start">10:00</span>
+                    <span>10:50</span>
+                </div>
+                <div class="lesson-info">
+                    <div class="lesson-title-row">
+                        <span class="lesson-name">Introduction to Programming 1</span>
+                        <span class="lesson-room">C1.1.360K (Main Campus)</span>
+                    </div>
+                    <div class="lesson-details">
+                        <span class="lesson-type">💻 Практика</span>
+                        <span class="lesson-prof">👨‍🏫 Касымов Д.</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lesson-card">
+                <div class="lesson-time">
+                    <span class="start">11:00</span>
+                    <span>11:50</span>
+                </div>
+                <div class="lesson-info">
+                    <div class="lesson-title-row">
+                        <span class="lesson-name">Introduction to Programming 1</span>
+                        <span class="lesson-room">C1.1.360K (Main Campus)</span>
+                    </div>
+                    <div class="lesson-details">
+                        <span class="lesson-type">💻 Практика</span>
+                        <span class="lesson-prof">👨‍🏫 Касымов Д.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Вторник -->
+    <div class="day-section">
+        <div class="day-header">📅 Вторник</div>
+        <div class="lessons-list">
+            <div class="lesson-card">
+                <div class="lesson-time">
+                    <span class="start">10:00</span>
+                    <span>10:50</span>
+                </div>
+                <div class="lesson-info">
+                    <div class="lesson-title-row">
+                        <span class="lesson-name">Calculus 1</span>
+                        <span class="lesson-room">C1.3.264L (Main Campus)</span>
+                    </div>
+                    <div class="lesson-details">
+                        <span class="lesson-type">📖 Лекция</span>
+                        <span class="lesson-prof">👨‍🏫 Букаева М.С.</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lesson-card">
+                <div class="lesson-time">
+                    <span class="start">11:00</span>
+                    <span>11:50</span>
+                </div>
+                <div class="lesson-info">
+                    <div class="lesson-title-row">
+                        <span class="lesson-name">Calculus 1</span>
+                        <span class="lesson-room">C1.3.264L (Main Campus)</span>
+                    </div>
+                    <div class="lesson-details">
+                        <span class="lesson-type">📖 Лекция</span>
+                        <span class="lesson-prof">👨‍🏫 Букаева М.С.</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lesson-card">
+                <div class="lesson-time">
+                    <span class="start">12:00</span>
+                    <span>12:50</span>
+                </div>
+                <div class="lesson-info">
+                    <div class="lesson-title-row">
+                        <span class="lesson-name">Calculus 1</span>
+                        <span class="lesson-room">C1.1.223P (Main Campus)</span>
+                    </div>
+                    <div class="lesson-details">
+                        <span class="lesson-type">💻 Практика</span>
+                        <span class="lesson-prof">👨‍🏫 Букаева М.С.</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lesson-card">
+                <div class="lesson-time">
+                    <span class="start">13:05</span>
+                    <span>13:55</span>
+                </div>
+                <div class="lesson-info">
+                    <div class="lesson-title-row">
+                        <span class="lesson-name">Calculus 1</span>
+                        <span class="lesson-room">C1.1.223P (Main Campus)</span>
+                    </div>
+                    <div class="lesson-details">
+                        <span class="lesson-type">💻 Практика</span>
+                        <span class="lesson-prof">👨‍🏫 Букаева М.С.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Среда -->
+    <div class="day-section">
+        <div class="day-header">📅 Среда</div>
+        <div class="lessons-list">
+            <div class="lesson-card">
+                <div class="lesson-time">
+                    <span class="start">9:00</span>
+                    <span>9:50</span>
+                </div>
+                <div class="lesson-info">
+                    <div class="lesson-title-row">
+                        <span class="lesson-name">Introduction to Programming 1</span>
+                        <span class="lesson-room">C1.2.229K (Main Campus)</span>
+                    </div>
+                    <div class="lesson-details">
+                        <span class="lesson-type">💻 Практика</span>
+                        <span class="lesson-prof">👨‍🏫 Касымов Д.</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lesson-card">
+                <div class="lesson-time">
+                    <span class="start">12:00</span>
+                    <span>12:50</span>
+                </div>
+                <div class="lesson-info">
+                    <div class="lesson-title-row">
+                        <span class="lesson-name">Foreign Language 1 (B2)</span>
+                        <span class="lesson-room">C1.1.365P (Main Campus)</span>
+                    </div>
+                    <div class="lesson-details">
+                        <span class="lesson-type">💻 Практика</span>
+                        <span class="lesson-prof">👨‍🏫 Нурабаева Ж.Д.</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lesson-card">
+                <div class="lesson-time">
+                    <span class="start">13:05</span>
+                    <span>13:55</span>
+                </div>
+                <div class="lesson-info">
+                    <div class="lesson-title-row">
+                        <span class="lesson-name">Foreign Language 1 (B2)</span>
+                        <span class="lesson-room">C1.1.365P (Main Campus)</span>
+                    </div>
+                    <div class="lesson-details">
+                        <span class="lesson-type">💻 Практика</span>
+                        <span class="lesson-prof">👨‍🏫 Нурабаева Ж.Д.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Четверг -->
+    <div class="day-section">
+        <div class="day-header">📅 Четверг</div>
+        <div class="lessons-list" style="padding: 20px; text-align: center; color: var(--text-muted);">
+            В этот день нет очных занятий (только онлайн).
+        </div>
+    </div>
+
+    <!-- Пятница -->
+    <div class="day-section">
+        <div class="day-header">📅 Пятница</div>
+        <div class="lessons-list">
+            <div class="lesson-card">
+                <div class="lesson-time">
+                    <span class="start">12:00</span>
+                    <span>12:50</span>
+                </div>
+                <div class="lesson-info">
+                    <div class="lesson-title-row">
+                        <span class="lesson-name">Information and Communication Technologies</span>
+                        <span class="lesson-room">C1.2.231K (Main Campus)</span>
+                    </div>
+                    <div class="lesson-details">
+                        <span class="lesson-type">💻 Практика</span>
+                        <span class="lesson-prof">👨‍🏫 Жолмырза А.Б.</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lesson-card">
+                <div class="lesson-time">
+                    <span class="start">13:05</span>
+                    <span>13:55</span>
+                </div>
+                <div class="lesson-info">
+                    <div class="lesson-title-row">
+                        <span class="lesson-name">Information and Communication Technologies</span>
+                        <span class="lesson-room">C1.2.231K (Main Campus)</span>
+                    </div>
+                    <div class="lesson-details">
+                        <span class="lesson-type">💻 Практика</span>
+                        <span class="lesson-prof">👨‍🏫 Жолмырза А.Б.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Суббота -->
+    <div class="day-section">
+        <div class="day-header">📅 Суббота</div>
+        <div class="lessons-list">
+            <div class="lesson-card">
+                <div class="lesson-time">
+                    <span class="start">8:00</span>
+                    <span>8:50</span>
+                </div>
+                <div class="lesson-info">
+                    <div class="lesson-title-row">
+                        <span class="lesson-name">History of Kazakhstan (State Exam)</span>
+                        <span class="lesson-room">C1.2.230P (Main Campus)</span>
+                    </div>
+                    <div class="lesson-details">
+                        <span class="lesson-type">💻 Практика</span>
+                        <span class="lesson-prof">👨‍🏫 Джампеисова Ж.М.</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lesson-card">
+                <div class="lesson-time">
+                    <span class="start">9:00</span>
+                    <span>9:50</span>
+                </div>
+                <div class="lesson-info">
+                    <div class="lesson-title-row">
+                        <span class="lesson-name">History of Kazakhstan (State Exam)</span>
+                        <span class="lesson-room">C1.2.230P (Main Campus)</span>
+                    </div>
+                    <div class="lesson-details">
+                        <span class="lesson-type">💻 Практика</span>
+                        <span class="lesson-prof">👨‍🏫 Джампеисова Ж.М.</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lesson-card">
+                <div class="lesson-time">
+                    <span class="start">12:00</span>
+                    <span>12:50</span>
+                </div>
+                <div class="lesson-info">
+                    <div class="lesson-title-row">
+                        <span class="lesson-name">Foreign Language 1 (B2)</span>
+                        <span class="lesson-room">C1.1.365P (Main Campus)</span>
+                    </div>
+                    <div class="lesson-details">
+                        <span class="lesson-type">💻 Практика</span>
+                        <span class="lesson-prof">👨‍🏫 Нурабаева Ж.Д.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
